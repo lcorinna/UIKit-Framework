@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lesson_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhx-Ii-PMJ">
+                                <rect key="frame" x="20" y="93" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="kWh-ld-WQc">
+                                <rect key="frame" x="300" y="44" width="94" height="32"/>
+                                <connections>
+                                    <action selector="sizeFont:" destination="BYZ-38-t0r" eventType="valueChanged" id="fKl-oe-OSM"/>
+                                </connections>
+                            </stepper>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Lm4-sH-J50">
+                                <rect key="frame" x="197" y="443" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDh-dW-ASU">
+                                <rect key="frame" x="20" y="158" width="374" height="443"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Manage the keyboard
+When the user taps in an editable text view, that text view becomes the first responder and automatically asks the system to display the associated keyboard. Because the appearance of the keyboard has the potential to obscure portions of your user interface, it’s up to you to make sure that doesn’t happen by repositioning any views that might be obscured. Some system views, like table views, help you by scrolling the first responder into view automatically. If the first responder is at the bottom of the scrolling region, however, you may still need to resize or reposition the scroll view itself to ensure the first responder is visible.
+
+It’s your application’s responsibility to dismiss the keyboard at the time of your choosing. You might dismiss the keyboard in response to a specific user action, such as the user tapping a particular button in your user interface. To dismiss the keyboard, send the resignFirstResponder() message to the text view that’s currently the first responder. Doing so causes the text view object to end the current editing session (with the delegate object’s consent) and hide the keyboard.
+
+The appearance of the keyboard itself can be customized using the properties provided by the UITextInputTraits protocol. Text view objects implement this protocol and support the properties it defines. You can use these properties to specify the type of keyboard (ASCII, Numbers, URL, Email, and others) to display. You can also configure the basic text entry behavior of the keyboard, such as whether it supports automatic capitalization and correction of the text.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p4c-PX-x1c">
+                                <rect key="frame" x="20" y="158" width="374" height="4"/>
+                            </progressView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="p4c-PX-x1c" firstAttribute="centerX" secondItem="fDh-dW-ASU" secondAttribute="centerX" id="1Pt-O8-AL3"/>
+                            <constraint firstItem="Yhx-Ii-PMJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="49" id="2fi-A6-ODs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kWh-ld-WQc" secondAttribute="trailing" constant="20" id="4Vh-PP-fNL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fDh-dW-ASU" secondAttribute="trailing" constant="20" id="Cjh-vH-0Cr"/>
+                            <constraint firstItem="p4c-PX-x1c" firstAttribute="top" secondItem="fDh-dW-ASU" secondAttribute="top" id="FvT-eF-TPM"/>
+                            <constraint firstItem="Yhx-Ii-PMJ" firstAttribute="width" secondItem="fDh-dW-ASU" secondAttribute="width" multiplier="0.112299" id="GVK-ip-2Mm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yhx-Ii-PMJ" secondAttribute="trailing" constant="352" id="NLh-wR-URX"/>
+                            <constraint firstItem="Yhx-Ii-PMJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PVc-Lp-1BN"/>
+                            <constraint firstItem="p4c-PX-x1c" firstAttribute="width" secondItem="fDh-dW-ASU" secondAttribute="width" id="U2X-N6-1A5"/>
+                            <constraint firstItem="Lm4-sH-J50" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="UQT-Lc-8Ea"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fDh-dW-ASU" secondAttribute="bottom" constant="261" id="hWW-DI-Ub9"/>
+                            <constraint firstItem="fDh-dW-ASU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="j3l-Jq-SrV"/>
+                            <constraint firstItem="kWh-ld-WQc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jVM-iA-PMU"/>
+                            <constraint firstItem="Lm4-sH-J50" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="s8s-IX-iGc"/>
+                            <constraint firstItem="fDh-dW-ASU" firstAttribute="top" secondItem="Yhx-Ii-PMJ" secondAttribute="bottom" constant="44" id="wVP-pn-rzJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Lm4-sH-J50" id="pwU-mI-mdK"/>
+                        <outlet property="bottomConstraint" destination="hWW-DI-Ub9" id="sKf-7t-P1V"/>
+                        <outlet property="countLabel" destination="Yhx-Ii-PMJ" id="0YU-QU-IiY"/>
+                        <outlet property="progressView" destination="p4c-PX-x1c" id="jTS-ae-VBE"/>
+                        <outlet property="stepper" destination="kWh-ld-WQc" id="AqG-Ht-EHZ"/>
+                        <outlet property="textView" destination="fDh-dW-ASU" id="i2Y-eR-5Yn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="69.642857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
