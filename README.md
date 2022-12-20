@@ -1,6 +1,6 @@
 # UIKit Framework
 
-This module is aimed at working with the UIKit framework. Each lesson was dedicated to the operation of various user interface tools. The content of the lessons can be found below:
+This module is dedicated to working with the UIKit framework. Each lesson was dedicated to the operation of various user interface tools. The content of the lessons can be found below:
 
 > Данный модуль направлен на работу с фреймворком UIKit. Каждый урок был посвящен работа различных инструментов пользовательского интерфейса. С содержанием уроков можно ознакомиться ниже:
 
