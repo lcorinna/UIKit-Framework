@@ -8,7 +8,7 @@
 import UIKit
 
 class ContentViewController: UIViewController {
-
+    
     @IBOutlet weak var presentTextLabel: UILabel!
     @IBOutlet weak var emojiLabel: UILabel!
     @IBOutlet weak var pageConrtoll: UIPageControl!
@@ -19,7 +19,7 @@ class ContentViewController: UIViewController {
     var currentPage = 0
     var numberOfPage = 0
     var hiddenButton = false
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,7 +35,7 @@ class ContentViewController: UIViewController {
             endButton.tintColor = .white
             endButton.setTitle("Got it", for: .normal)
         }
-    
+        
     }
     
     @IBAction func endButtonAction(_ sender: UIButton) {

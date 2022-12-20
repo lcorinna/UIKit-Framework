@@ -12,9 +12,9 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        let userDefaults = UserDefaults.standard   //del
-//         userDefaults.set(false, forKey: "presentationWasViewed")  //del
-
+        //        let userDefaults = UserDefaults.standard   //del
+        //         userDefaults.set(false, forKey: "presentationWasViewed")  //del
+        
         startPresentation()
     }
     
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         let presentationWasViewed = userDefaults.bool(forKey: "presentationWasViewed")
         if presentationWasViewed == false {
             if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "PageViewController") as? PageViewController {
-                
+                pageViewController.modalPresentationStyle = .fullScreen
                 present(pageViewController, animated: true, completion: nil)
             }
         }
